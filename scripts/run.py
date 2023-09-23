@@ -1,7 +1,7 @@
 import os
 import sys
 
-from game import cli
+from pyjam7 import cli
 
 
 def main():

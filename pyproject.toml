@@ -3,6 +3,9 @@ name = "pyjam7"
 dynamic = ["version"]
 dependencies = ["arcade"]
 
+[project.optional-dependencies]
+dev = ["pyinstaller"]
+
 [project.scripts]
 pyjam7 = "pyjam7.cli:run"
 
