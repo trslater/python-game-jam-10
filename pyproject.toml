@@ -1,6 +1,7 @@
 [project]
 name = "pyjam7"
 dynamic = ["version"]
+dependencies = ["arcade"]
 
 [tool.setuptools.dynamic]
 version = { attr = "pyjam7.__version__" }
