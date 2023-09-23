@@ -3,6 +3,9 @@ name = "pyjam7"
 dynamic = ["version"]
 dependencies = ["arcade"]
 
+[project.scripts]
+pyjam7 = "pyjam7.cli:run"
+
 [tool.setuptools.dynamic]
 version = { attr = "pyjam7.__version__" }
 
