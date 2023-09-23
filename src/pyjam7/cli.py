@@ -5,6 +5,7 @@ from pyjam7.game import Game
 
 
 def run():
-    Game(config())
+    game = Game(config())
+    game.setup()
     
     arcade.run()
