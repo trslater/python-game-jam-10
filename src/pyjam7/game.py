@@ -29,7 +29,7 @@ class Game(arcade.Window):
 
     def setup(self):
         self.map = arcade.load_tilemap("maps/01.tmx", self.pixel_size, {
-            "Walls": {
+            "Obstacles": {
                 "use_spatial_hash": True,
             },
         })
