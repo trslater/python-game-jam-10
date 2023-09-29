@@ -11,11 +11,20 @@ class Game(arcade.Window):
             config["window"]["height"]*self.pixel_size,
             config["window"]["title"],
             antialiasing=False)
+
+        self.movement_keys = (
+            arcade.key.UP,
+            arcade.key.DOWN,
+            arcade.key.LEFT,
+            arcade.key.RIGHT,
+        )
         
         self.map = None
         self.scene = None
         self.player = None
         self.camera = None
+
+        self.keys_down = None
 
     def setup(self):
         self.map = arcade.load_tilemap("maps/01.tmx", self.pixel_size, {
@@ -33,6 +42,8 @@ class Game(arcade.Window):
         
         self.camera = arcade.Camera(self.width, self.height)
 
+        self.keys_down = set()
+
     def center_camera_on_player(self):
         new_x = self.player.center_x - self.camera.viewport_width/2
         new_y = self.player.center_y - self.camera.viewport_height/2
@@ -42,27 +53,50 @@ class Game(arcade.Window):
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed."""
 
-        if key == arcade.key.UP or key == arcade.key.W:
-            self.player.change_y = self.player_speed
-        elif key == arcade.key.DOWN or key == arcade.key.S:
-            self.player.change_y = -self.player_speed
-        elif key == arcade.key.LEFT or key == arcade.key.A:
-            self.player.change_x = -self.player_speed
-        elif key == arcade.key.RIGHT or key == arcade.key.D:
-            self.player.change_x = self.player_speed
-    
+        if key in self.movement_keys:
+            self.keys_down.add(key)
+
+        self.update_movement()
+
     def on_key_release(self, key, modifiers):
         """Called when the user releases a key."""
 
-        if key == arcade.key.UP or key == arcade.key.W:
-            self.player.change_y = 0
-        elif key == arcade.key.DOWN or key == arcade.key.S:
-            self.player.change_y = 0
-        elif key == arcade.key.LEFT or key == arcade.key.A:
-            self.player.change_x = 0
-        elif key == arcade.key.RIGHT or key == arcade.key.D:
-            self.player.change_x = 0
-    
+        if key in self.movement_keys:
+            self.keys_down.remove(key)
+
+            if key == arcade.key.UP:
+                self.player.change_y = 0
+
+            if key == arcade.key.DOWN:
+                self.player.change_y = 0
+
+            if key == arcade.key.RIGHT:
+                self.player.change_x = 0
+
+            if key == arcade.key.LEFT:
+                self.player.change_x = 0
+
+        self.update_movement()
+
+    def update_movement(self):
+        speed = self.player_speed
+
+        if len(self.keys_down) == 2:
+            # Roughly root 2 over 2
+            speed *= 0.7
+
+        if arcade.key.UP in self.keys_down:
+            self.player.change_y = speed
+
+        if arcade.key.DOWN in self.keys_down:
+            self.player.change_y = -speed
+
+        if arcade.key.RIGHT in self.keys_down:
+            self.player.change_x = speed
+
+        if arcade.key.LEFT in self.keys_down:
+            self.player.change_x = -speed
+
     def on_update(self, delta_time):
         """Movement and game logic"""
 
