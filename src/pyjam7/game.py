@@ -25,6 +25,7 @@ class Game(arcade.Window):
         self.camera = None
 
         self.keys_down = None
+        self.footstep = None
 
     def setup(self):
         self.map = arcade.load_tilemap("maps/01.tmx", self.pixel_size, {
@@ -44,6 +45,12 @@ class Game(arcade.Window):
 
         self.keys_down = set()
 
+        wind = arcade.load_sound("assets/wind.wav")
+        wind.play(loop=True)
+
+        self.footstep = arcade.load_sound("assets/footstep.wav")
+        self.footstep_player = None
+
     def center_camera_on_player(self):
         new_x = self.player.center_x - self.camera.viewport_width/2
         new_y = self.player.center_y - self.camera.viewport_height/2
@@ -54,6 +61,9 @@ class Game(arcade.Window):
         """Called whenever a key is pressed."""
 
         if key in self.movement_keys:
+            if self.footstep_player is None or not self.footstep.is_playing(self.footstep_player):
+                self.footstep_player = self.footstep.play(loop=True)
+
             self.keys_down.add(key)
 
         self.update_movement()
@@ -63,6 +73,9 @@ class Game(arcade.Window):
 
         if key in self.movement_keys:
             self.keys_down.remove(key)
+
+            if len(self.keys_down) == 0:
+                self.footstep.stop(self.footstep_player)
 
             if key == arcade.key.UP:
                 self.player.change_y = 0
