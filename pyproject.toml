@@ -1,20 +1,14 @@
+[build.system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "pyjam10"
 dynamic = ["version"]
-dependencies = ["arcade"]
-
-[project.optional-dependencies]
-dev = ["pyinstaller"]
+dependencies = ["arcade", "pyinstaller"]
 
 [project.scripts]
 pyjam10 = "pyjam10.cli:run"
 
 [tool.setuptools.dynamic]
 version = { attr = "pyjam10.__version__" }
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
-[build.system]
-requires = ["setuptools>=65.5"]
-build-backend = "setuptools.build_meta"
