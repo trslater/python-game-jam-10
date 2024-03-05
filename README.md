@@ -5,12 +5,20 @@ This is my entry into the [Python Game Jam #10](https://itch.io/jam/python-game-
 ## Playing the Game
 
 ```
-$ make install
+$ pip install -e .
 $ pyjam10
 ```
 
 ## Distribution
 
+### macOS
+
 ```
-$ make
+$ ./scripts/dist.sh
+```
+
+### Windows
+
+```
+$ .\scripts\dist.bat
 ```
