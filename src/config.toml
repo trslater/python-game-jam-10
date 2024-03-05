@@ -2,7 +2,7 @@
 width = 320
 height = 200
 pixel_size = 3
-title = "Python Game Jam #7"
+title = "Python Game Jam #10"
 
 [player]
 speed = 5

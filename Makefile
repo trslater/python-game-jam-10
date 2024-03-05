@@ -14,7 +14,7 @@ dist:
 		--add-data "maps$(SEP)maps" \
 		--onefile \
 		--windowed \
-		--name pyjam7
+		--name pyjam10
 
 install:
 	pip install -e .
@@ -25,4 +25,4 @@ dev:
 clean:
 	rm -fr ./build
 	rm -fr ./dist
-	rm pyjam7.spec
+	rm pyjam10.spec

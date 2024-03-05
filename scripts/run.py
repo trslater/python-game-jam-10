@@ -1,7 +1,7 @@
 import os
 import sys
 
-from pyjam7 import cli
+from pyjam10 import cli
 
 
 def main():

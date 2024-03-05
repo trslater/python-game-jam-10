@@ -1,5 +1,5 @@
 [project]
-name = "pyjam7"
+name = "pyjam10"
 dynamic = ["version"]
 dependencies = ["arcade"]
 
@@ -7,10 +7,10 @@ dependencies = ["arcade"]
 dev = ["pyinstaller"]
 
 [project.scripts]
-pyjam7 = "pyjam7.cli:run"
+pyjam10 = "pyjam10.cli:run"
 
 [tool.setuptools.dynamic]
-version = { attr = "pyjam7.__version__" }
+version = { attr = "pyjam10.__version__" }
 
 [tool.setuptools.packages.find]
 where = ["src"]

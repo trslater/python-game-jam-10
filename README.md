@@ -1,12 +1,12 @@
-# Python Game Jam #7
+# Python Game Jam #10
 
-This is my entry into the [Python Game Jam #7](https://itch.io/jam/python-game-jam-7).
+This is my entry into the [Python Game Jam #10](https://itch.io/jam/python-game-jam-10).
 
 ## Playing the Game
 
 ```
 $ make install
-$ pyjam7
+$ pyjam10
 ```
 
 ## Development
