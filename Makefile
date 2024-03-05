@@ -5,7 +5,7 @@ ifeq ($(OS),Windows_NT)
 	SEP=;
 endif
 
-.PHONY: dist install dev clean
+.PHONY: dist install clean
 
 dist:
 	pyinstaller scripts/run.py \
@@ -18,9 +18,6 @@ dist:
 
 install:
 	pip install -e .
-
-dev:
-	pip install -e '.[dev]'
 
 clean:
 	rm -fr ./build

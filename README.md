@@ -9,12 +9,6 @@ $ make install
 $ pyjam10
 ```
 
-## Development
-
-```
-$ make dev
-```
-
 ## Distribution
 
 ```
