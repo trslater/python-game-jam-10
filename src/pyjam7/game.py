@@ -45,8 +45,11 @@ class Game(arcade.Window):
 
         self.keys_down = set()
 
-        wind = arcade.load_sound("assets/wind.wav")
-        wind.play(loop=True)
+        # wind = arcade.load_sound("assets/wind.wav")
+        # wind.play(loop=True)
+        
+        music = arcade.load_sound("assets/music.wav")
+        music.play(loop=True)
 
         self.footstep = arcade.load_sound("assets/footstep.wav")
         self.footstep_player = None

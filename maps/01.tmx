@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-up" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="4">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-up" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="5">
  <tileset firstgid="1" source="../assets/tiles.tsx"/>
  <layer id="2" name="Ground" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJztwwENAAAMw6BKmH+1F3JIWDVVVVXfPRfEOEE=
+   eJztwwENAAAMw6BqmH+xF3JIWDVVVVXfPZjzP0k=
   </data>
  </layer>
  <layer id="1" name="Obstacles" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjALqAwESMTXtpYXaUXtxm8U5QPbiAjD3DLdwHkz2Isc5Le3Fl7aGSzgPRDk5CkbBKBgFyAAAVvwC5Q==
+   eJztwQEBAAAAgiD/r25IQAEAAPBoDhAAAQ==
   </data>
  </layer>
  <layer id="5" name="Ornaments" width="30" height="30">
@@ -17,6 +17,6 @@
   </data>
  </layer>
  <objectgroup id="4" name="Player">
-  <object id="3" gid="17" x="234.938" y="256.678" width="16" height="32"/>
+  <object id="4" gid="19" x="238.893" y="240.294" width="16" height="32"/>
  </objectgroup>
 </map>

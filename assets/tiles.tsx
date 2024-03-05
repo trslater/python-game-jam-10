@@ -9,13 +9,10 @@
    <object id="4" x="0" y="10" width="16" height="22"/>
   </objectgroup>
  </tile>
- <tile id="15">
-  <image width="16" height="16" source="sand.png"/>
+ <tile id="17">
+  <image width="16" height="16" source="grass.png"/>
  </tile>
- <tile id="16">
+ <tile id="18">
   <image width="16" height="32" source="player-front.png"/>
-  <objectgroup draworder="index" id="2">
-   <object id="1" x="0.183565" y="24.506" width="15.6948" height="7.52617"/>
-  </objectgroup>
  </tile>
 </tileset>
